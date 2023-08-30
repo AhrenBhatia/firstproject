@@ -21,4 +21,15 @@ public class FileUtilities {
         pw.write(words);
         pw.close();
     }
+
+    public static int countCharacters(String fileName) throws IOException {
+        int chars = 0;
+        BufferedReader charRead = new BufferedReader(new FileReader(fileName));
+        while (charRead.ready()) {
+            charRead.read();
+            chars++;
+        }
+        charRead.close();
+        return chars;
+    }
 }
